@@ -37,3 +37,6 @@ bower_components/
 # Miscellaneous
 *.swp
 *.lock-wscript
+
+# Publish Profile Files
+*.PublishSettings

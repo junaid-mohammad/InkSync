@@ -10,7 +10,7 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  azureSubscription: "Azure for Students" # Replace with your Azure connection name
+  azureSubscription: "InkSync-UI-PublishProfile" # Replace with your Azure connection name
   appName: "InkSync-UI" # Name of your Azure App Service for the UI
   packageDir: "ui" # Directory containing the UI project
 
@@ -43,4 +43,4 @@ steps:
       azureSubscription: "$(azureSubscription)"
       appName: "$(appName)"
       package: "$(Build.ArtifactStagingDirectory)/$(appName).zip"
-    displayName: "Deploy to Azure App Service (UI)"
+    displayName: "Deploy InkSync-UI to Azure App Service"
