@@ -1,0 +1,169 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "InkSync Blog API",
+      "version": "1.0.0",
+      "description": "InkSync is a lightweight RESTful API for managing blog posts in a stateless, mock server environment. This API supports all standard HTTP methods (GET, POST, PATCH, DELETE) for full CRUD operations. **Note:** Data is stored only in memory and will be reset on server restart. This is ideal for demos, sandbox testing, and education—not production use."
+    },
+    "servers": [
+      {
+        "url": "https://inksync-api.azurewebsites.net",
+        "description": "Production server"
+      },
+      {
+        "url": "http://localhost:4000",
+        "description": "Local development server"
+      }
+    ],
+    "paths": {
+      "/posts": {
+        "get": {
+          "summary": "Retrieve all blog posts",
+          "description": "Returns an array of all current posts in memory. If no posts exist, returns an empty array.",
+          "responses": {
+            "200": {
+              "description": "List of blog posts",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "$ref": "#/components/schemas/Post" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new blog post",
+          "description": "Adds a new post to the in-memory post list. Post data must include `title`, `content`, and `author`. A date is auto-generated. All data will be lost if the server restarts.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "schema": { "$ref": "#/components/schemas/PostInput" }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "New post created successfully"
+            }
+          }
+        }
+      },
+      "/posts/{id}": {
+        "get": {
+          "summary": "Retrieve a single post by ID",
+          "description": "Fetches a single post from memory by its numeric ID. Returns 404 if not found.",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "schema": { "type": "integer" }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Post found",
+              "content": {
+                "application/json": {
+                  "schema": { "$ref": "#/components/schemas/Post" }
+                }
+              }
+            },
+            "404": { "description": "Post not found" }
+          }
+        },
+        "patch": {
+          "summary": "Update a post",
+          "description": "Partially updates a post based on the provided fields. Accepts `title`, `content`, and/or `author`. Does nothing if no valid fields are sent.",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "schema": { "type": "integer" }
+            }
+          ],
+          "requestBody": {
+            "required": false,
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "schema": { "$ref": "#/components/schemas/PostInput" }
+              }
+            }
+          },
+          "responses": {
+            "200": { "description": "Post updated" },
+            "404": { "description": "Post not found" }
+          }
+        },
+        "delete": {
+          "summary": "Delete a post by ID",
+          "description": "Removes the post from the in-memory store based on ID. If the post does not exist, returns a 404 error.",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "schema": { "type": "integer" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Post deleted successfully" },
+            "404": { "description": "Post not found" }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Post": {
+          "type": "object",
+          "properties": {
+            "id": { 
+                "type": "integer", 
+                "example": 1 
+            },
+            "title": { 
+                "type": "string", 
+                "example": "The Rise of Decentralized Finance" 
+            },
+            "content": {
+              "type": "string",
+              "example": "Decentralized Finance (DeFi) is reshaping traditional banking by enabling peer-to-peer transactions over blockchain networks."
+            },
+            "author": { 
+                "type": "string", 
+                "example": "Alex Thompson" 
+            },
+            "date": { 
+                "type": "string", 
+                "format": "date", 
+                "example": "2023-08-01" 
+            }
+          }
+        },
+        "PostInput": {
+          "type": "object",
+          "properties": {
+            "title": { 
+                "type": "string", 
+                "example": "Sustainable Living Tips" 
+            },
+            "content": {
+              "type": "string",
+              "example": "Simple ways to reduce waste, conserve energy, and lead a more eco-conscious life in the modern world."
+            },
+            "author": { 
+                "type": "string", 
+                "example": "Samuel Green" 
+            }
+          },
+          "required": ["title", "content", "author"]
+        }
+      }
+    }
+  }

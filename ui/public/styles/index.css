@@ -1,0 +1,208 @@
+/* ============================================
+   index.css — Stylesheet for InkSync Frontend
+   Applies styling to blog layout and editor UI
+   ============================================ */
+
+/* ========== Reset Defaults & Base Font ========== */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+form,
+input,
+textarea,
+a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Arial", sans-serif;
+}
+
+/* ========== Body Layout ========== */
+body {
+  background-color: #f7f9fc;  /* Light gray background */
+  color: #333;                /* Main text color */
+  line-height: 1.6;
+}
+
+/* ========== Content Container ========== */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Subtle elevation */
+}
+
+.container p {
+  text-align: justify;
+}
+
+/* ========== Headings ========== */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* ========== Paragraphs and Form Fields ========== */
+p,
+input,
+textarea {
+  margin-bottom: 20px;
+}
+
+/* ========== Small Text (e.g., author/date) ========== */
+small {
+  display: block;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+/* ========== Input Fields ========== */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+}
+
+/* ========== Buttons and Links ========== */
+a,
+button {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Full-width form buttons */
+button.full-width {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Neutral 'Cancel' Button */
+.secondary-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #ccc;
+  color: #333;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.secondary-btn:hover {
+  background-color: #bbb;
+}
+
+/* Hover for standard buttons/links */
+a,
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ========== Blog Post Layout ========== */
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Edit/Delete buttons on posts */
+a.edit {
+  background-color: #007bff;
+}
+
+a.delete {
+  background-color: #e74c3c;
+}
+
+a.delete:hover {
+  background-color: #c0392b;
+}
+
+/* ========== 'New Post' Button ========== */
+#newPostBtn {
+  margin: 20px 0;
+  background-color: #2ecc71;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+#newPostBtn:hover {
+  background-color: #27ae60;
+}
+
+/* ========== Footer Styling ========== */
+.footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 1em;
+  color: #666;
+}
+
+.footer nav {
+  margin-top: 10px;
+}
+
+/* Footer links (clean, unboxed) */
+.footer nav a {
+  margin: 0 10px;
+  color: #444;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.footer nav a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}

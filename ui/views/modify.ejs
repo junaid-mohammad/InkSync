@@ -1,0 +1,70 @@
+<!-- ============================
+     modify.ejs — Editor Page Template (Create or Edit Post)
+     ============================ -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     
+     <head>
+       <!-- === Meta Configuration === -->
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     
+       <!-- === Page Title and Favicon === -->
+       <title>InkSync Editor</title>
+       <link rel="icon" href="https://emojiapi.dev/api/v1/memo/64.png" type="image/png" />
+     
+       <!-- === CSS Styles === -->
+       <link rel="stylesheet" href="/styles/index.css" />
+     </head>
+     
+     <body>
+       <!-- ============================
+            Editor Form Container
+            ============================ -->
+       <div class="container">
+         <!-- Heading: "Edit Post" or "New Post" (passed dynamically) -->
+         <h1><%= heading %></h1>
+     
+         <!-- === If editing an existing post === -->
+         <% if (locals.post) { %>
+           <form id="editForm" method="post" action="/api/posts/<%= post.id %>">
+             <input type="text" name="title" value="<%= post.title %>" required />
+             <textarea name="content" rows="10" required><%= post.content %></textarea>
+             <input type="text" name="author" value="<%= post.author %>" required />
+     
+             <!-- Action Buttons -->
+             <button class="full-width" type="submit"><%= submit %></button>
+             <button type="button" class="secondary-btn" onclick="window.location.href='/'">Cancel</button>
+           </form>
+     
+         <!-- === If creating a new post === -->
+         <% } else { %>
+           <form id="newPostForm" method="post" action="/api/posts">
+             <input type="text" name="title" placeholder="Title" required />
+             <textarea name="content" placeholder="Content" rows="10" required></textarea>
+             <input type="text" name="author" placeholder="Author" required />
+     
+             <!-- Action Buttons -->
+             <button class="full-width" type="submit"><%= submit %></button>
+             <button type="button" class="secondary-btn" onclick="window.location.href='/'">Cancel</button>
+           </form>
+         <% } %>
+       </div>
+     
+       <!-- ============================
+            Footer Section
+            ============================ -->
+       <footer class="footer">
+         <p>&copy; <%= new Date().getFullYear() %> | Junaid Arif</p>
+         <nav>
+           <a href="https://junaid-mohammad.github.io/HTML-Portfolio-Website/">Website</a>
+           <a href="https://github.com/junaid-mohammad">GitHub</a>
+           <a href="https://www.linkedin.com/in/junaidarif-mohammad/">LinkedIn</a>
+           <a href="mailto:mohammad.junaidarif@mail.mcgill.ca">Email</a>
+         </nav>
+       </footer>
+     </body>
+     
+     </html>
+     

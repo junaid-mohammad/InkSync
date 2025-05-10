@@ -1,0 +1,39 @@
+# Logs and temporary files
+*.log
+*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# IDE/project files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Build and cache files
+dist/
+build/
+.cache/
+out/
+coverage/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Miscellaneous
+*.swp
+*.lock-wscript

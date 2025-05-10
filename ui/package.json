@@ -1,0 +1,43 @@
+{
+  "name": "inksync-ui",
+  "version": "1.0.0",
+  "description": "InkSync UI is a web-based frontend for creating, editing, and displaying blog posts through the InkSync API. Built with Express and EJS, styled with clean CSS, and powered by Axios for API communication.",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "https://inksync-ui.azurewebsites.net/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junaid-mohammad/InkSync"
+  },
+  "bugs": "",
+  "keywords": [
+    "Blog UI",
+    "Express",
+    "Axios",
+    "EJS",
+    "Node.js",
+    "Frontend",
+    "RESTful API"
+  ],
+  "author": "Junaid Arif",
+  "contributors": [],
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": ""
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "license": "ISC"
+}

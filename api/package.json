@@ -1,0 +1,46 @@
+{
+  "name": "inksync-api",
+  "version": "1.0.0",
+  "description": "InkSync is a lightweight RESTful API for managing blog posts. Built with Node.js and Express, documented with Swagger, and styled with EJS. Note: all blog data is stored in-memory and resets on server restart.",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "https://inksync-api.azurewebsites.net/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junaid-mohammad/InkSync"
+  },
+  "bugs": "",
+  "keywords": [
+    "Blog API",
+    "RESTful API",
+    "Express",
+    "Swagger",
+    "EJS",
+    "Axios",
+    "Node.js",
+    "in-memory"
+  ],
+  "author": "Junaid Arif",
+  "contributors": [],
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": ""
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "license": "ISC"
+}

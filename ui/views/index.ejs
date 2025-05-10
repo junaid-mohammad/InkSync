@@ -1,0 +1,70 @@
+<!-- ============================
+     index.ejs — Home Page UI Template for InkSync
+     ============================ -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     
+     <head>
+       <!-- === Meta Tags === -->
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     
+       <!-- === Page Title and Favicon === -->
+       <title>InkSync</title>
+       <link rel="icon" href="https://emojiapi.dev/api/v1/memo/64.png" type="image/png" />
+     
+       <!-- === CSS Stylesheet === -->
+       <link rel="stylesheet" href="/styles/index.css" />
+     </head>
+     
+     <body>
+       <!-- ============================
+            Main Content Container
+            ============================ -->
+       <div class="container">
+         <h1>InkSync 🖋️</h1>
+     
+         <!-- Button to Navigate to New Post Form -->
+         <a id="newPostBtn" href="/new">New Post</a>
+     
+         <!-- Blog Posts List -->
+         <ul id="postsList">
+           <% posts.forEach(post => { %>
+             <li>
+               <!-- Post Title -->
+               <h2><%= post.title %></h2>
+     
+               <!-- Post Date -->
+               <small><%= post.date %></small>
+     
+               <!-- Post Content -->
+               <p><%= post.content %></p>
+     
+               <!-- Post Author -->
+               <small>By: <%= post.author %></small>
+     
+               <!-- Post Actions -->
+               <a class="edit" href="/edit/<%= post.id %>">Edit</a>
+               <a class="delete" href="/api/posts/delete/<%= post.id %>">Delete</a>
+             </li>
+           <% }) %>
+         </ul>
+       </div>
+     
+       <!-- ============================
+            Footer Section
+            ============================ -->
+       <footer class="footer">
+         <p>&copy; <%= new Date().getFullYear() %> | Junaid Arif</p>
+         <nav>
+           <a href="https://junaid-mohammad.github.io/HTML-Portfolio-Website/">Website</a>
+           <a href="https://github.com/junaid-mohammad">GitHub</a>
+           <a href="https://www.linkedin.com/in/junaidarif-mohammad/">LinkedIn</a>
+           <a href="mailto:mohammad.junaidarif@mail.mcgill.ca">Email</a>
+         </nav>
+       </footer>
+     </body>
+     
+     </html>
+     

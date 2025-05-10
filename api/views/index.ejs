@@ -1,0 +1,71 @@
+<!-- ============================
+     index.ejs — API Home Page Template (localhost:4000)
+     ============================ -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     
+     <head>
+       <!-- === Meta Configuration === -->
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     
+       <!-- === Page Title and Favicon === -->
+       <title>InkSync API</title>
+       <link rel="icon" href="https://emojiapi.dev/api/v1/memo/64.png" type="image/png" />
+     
+       <!-- === CSS Styles === -->
+       <link rel="stylesheet" type="text/css" href="/styles/index.css" />
+     </head>
+     
+     <body>
+       <!-- ============================
+            Main Landing Section
+            ============================ -->
+       <main>
+         <h1><span class="highlight">InkSync API</span></h1>
+         <p>
+           InkSync is a RESTful API built with <strong>Express</strong> and <strong>Node.js</strong> that manages blog posts.
+         </p>
+         <p>
+           The API follows REST standards and supports HTTP methods like<br>
+           <code>GET</code>, <code>POST</code>, <code>PATCH</code>, and <code>DELETE</code>.
+         </p>
+     
+         <!-- === CTA: Swagger Documentation Link === -->
+         <a href="/api-docs" class="cta-btn">Explore API Documentation</a>
+     
+         <!-- Tech stack note -->
+         <p class="stack">
+           Tech stack: Express, Axios, Swagger UI, Node.js
+         </p>
+     
+         <!-- Disclaimer about data persistence -->
+         <p class="disclaimer">
+           ⚠️ This API uses a temporary in-memory data store.<br />
+           All changes will be lost when the server restarts.
+         </p>
+     
+         <!-- GitHub Source Code Link -->
+         <p>
+           Source code available on 
+           <a href="https://github.com/junaid-mohammad/InkSync" target="_blank">GitHub</a>.
+         </p>
+       </main>
+     
+       <!-- ============================
+            Footer Section
+            ============================ -->
+       <footer>
+         <p>&copy; <%= new Date().getFullYear() %> | Junaid Arif</p>
+         <nav>
+           <a href="https://junaid-mohammad.github.io/HTML-Portfolio-Website/">Website</a>
+           <a href="https://github.com/junaid-mohammad">GitHub</a>
+           <a href="https://www.linkedin.com/in/junaidarif-mohammad/">LinkedIn</a>
+           <a href="mailto:mohammad.junaidarif@mail.mcgill.ca">Email</a>
+         </nav>
+       </footer>
+     </body>
+     
+     </html>
+     
