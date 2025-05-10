@@ -1,10 +1,10 @@
 # InkSync 🖋️
 
-[![Azure DevOps](https://img.shields.io/badge/CI/CD-Azure%20DevOps-blue)](https://dev.azure.com/Junaid-Arif/InkSync)
-[![Azure App Service](https://img.shields.io/badge/Hosted%20on-Azure%20App%20Service-brightgreen)]()
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)
-[![License: ISC](https://img.shields.io/badge/License-ISC-lightgrey.svg)]()
-[![Status](https://img.shields.io/badge/Data%20Persistence-Volatile-orange)]()
+[![CI/CD via Azure DevOps](https://img.shields.io/badge/CI%2FCD-Azure%20DevOps-blue?logo=azuredevops&logoColor=white)](https://dev.azure.com/Junaid-Arif/InkSync)
+[![Frontend UI](https://img.shields.io/badge/Frontend-Blog%20UI-blueviolet?logo=azurewebapps)](https://inksync-ui-fmewgcceaehfbgc9.canadacentral-01.azurewebsites.net/)
+[![Backend API](https://img.shields.io/badge/Backend-API%20Server-orange?logo=azurewebapps)](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/)
+[![Swagger Docs](https://img.shields.io/badge/Docs-Swagger%20UI-brightgreen?logo=swagger)](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/api-docs)
+[![GitHub Repo](https://img.shields.io/badge/Code-GitHub-black?logo=github)](https://github.com/junaid-mohammad/InkSync)
 
 **InkSync** is a modular full-stack blogging platform built to simulate the separation of concerns between API services and user-facing interfaces. Designed with scalability, maintainability, and deployment in mind, the project consists of:
 
@@ -17,10 +17,10 @@
 
 ## 💻 Live Services
 
-- 🖋️ **[InkSync API](https://inksync-api.azurewebsites.net/)** (Production API Server)
-- 📖 **[Swagger Docs](https://inksync-api.azurewebsites.net/api-docs)** (Interactive API documentation)
-- 📄 **[InkSync UI](https://inksync-ui.azurewebsites.net/)** (Frontend UI for blog editing)
-- 📃 **[Azure DevOps Project](https://dev.azure.com/Junaid-Arif/InkSync)** (CI/CD Management)
+- 🖋️ **[InkSync API](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/)** — REST API endpoint
+- 📖 **[Swagger Docs](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/api-docs)** — API documentation
+- 📰 **[InkSync UI](https://inksync-ui-fmewgcceaehfbgc9.canadacentral-01.azurewebsites.net/)** — User interface
+- 🛠 **[Azure DevOps Project](https://dev.azure.com/Junaid-Arif/InkSync)** — CI/CD pipelines and build logs
 
 ---
 
@@ -162,14 +162,6 @@ InkSync is deployed as **two independent Node.js applications** using **Microsof
 
 ---
 
-### 🌐 Live Services
-
-- **Frontend (UI):** [InkSync UI](https://inksync-ui.azurewebsites.net/)
-- **Backend (API):** [InkSync API](https://inksync-api.azurewebsites.net/)
-- **Swagger Docs:** [API Documentation](https://inksync-api.azurewebsites.net/api-docs)
-
----
-
 ## 🚫 In-Memory Disclaimer
 
 > **Note:** Data is stored in memory only. On every restart, posts reset to the original 3 sample entries. This is intentional to demonstrate functionality without database dependencies.
@@ -178,7 +170,7 @@ InkSync is deployed as **two independent Node.js applications** using **Microsof
 
 ## 🔬 API Documentation (Swagger)
 
-- Live: **[https://inksync-api.azurewebsites.net/api-docs](https://inksync-api.azurewebsites.net/api-docs)**
+- Live: **[https://inksync-api.azurewebsites.net/api-docs](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/api-docs)**
 - Includes:
 
   - All endpoints with `GET`, `POST`, `PATCH`, and `DELETE`
@@ -198,12 +190,10 @@ InkSync is deployed as **two independent Node.js applications** using **Microsof
 
 ---
 
-## 🌍 Repo & Contribution
+## 🤝 Contribution
 
-- GitHub: [junaid-mohammad/InkSync](https://github.com/junaid-mohammad/InkSync)
-- Azure DevOps: [Junaid-Arif/InkSync](https://dev.azure.com/Junaid-Arif/InkSync)
-
-Feel free to fork, explore, or remix for your own learning!
+This project was built as a portfolio/demo API.
+Feel free to fork it, explore, remix, or suggest improvements!
 
 ---
 

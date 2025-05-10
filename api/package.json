@@ -8,7 +8,7 @@
     "node": ">= 14.0.0",
     "npm": ">= 6.0.0"
   },
-  "homepage": "https://inksync-api.azurewebsites.net/",
+  "homepage": "https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/",
   "repository": {
     "type": "git",
     "url": "https://github.com/junaid-mohammad/InkSync"
