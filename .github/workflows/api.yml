@@ -29,9 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci # Install using package-lock (or use npm install if no lockfile)
 
-      - name: Build project (if needed)
-        run: npm run build --if-present
-
       # (Optional) - name: Run tests
       # (Optional)   run: npm test
 
