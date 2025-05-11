@@ -1,4 +1,4 @@
-# InkSync Deployment Challenges & Solutions
+# InkSync Deployment Challenges, Solutions & Lessons Learned
 
 This document outlines the complete journey, challenges, missteps, and final solutions encountered while deploying the **InkSync** project — a monorepo consisting of two subfolders (`api/` and `ui/`) — to **two separate Azure App Services**, using **CI/CD pipelines**. This record serves as a technical logbook for future reference and learning.
 

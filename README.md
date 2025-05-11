@@ -1,10 +1,10 @@
 # InkSync 🖋️
 
-[![CI/CD via GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=github&logoColor=white)](https://github.com/junaid-mohammad/InkSync/actions)
-[![Frontend UI](https://img.shields.io/badge/Frontend-Blog%20UI-blueviolet?logo=azurewebapps)](https://inksync-ui.azurewebsites.net/)
-[![Backend API](https://img.shields.io/badge/Backend-API%20Server-orange?logo=azurewebapps)](https://inksync-api.azurewebsites.net/)
-[![Swagger Docs](https://img.shields.io/badge/Docs-Swagger%20UI-brightgreen?logo=swagger)](https://inksync-api.azurewebsites.net/api-docs)
-[![Azure DevOps](https://img.shields.io/badge/CI%2FCD-Azure%20DevOps-blue?logo=azuredevops&logoColor=white)](https://dev.azure.com/Junaid-Arif/InkSync)
+[![CI/CD via GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=github&logoColor=white)](https://github.com/junaid-mohammad/InkSync/)
+[![Frontend UI](https://img.shields.io/badge/Frontend-Blog%20UI-blueviolet?logo=azurewebapps)](https://inksync-ui-fmewgcceaehfbgc9.canadacentral-01.azurewebsites.net/)
+[![Backend API](https://img.shields.io/badge/Backend-API%20Server-orange?logo=azurewebapps)](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/)
+[![Swagger Docs](https://img.shields.io/badge/Docs-Swagger%20UI-brightgreen?logo=swagger)](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/api-docs)
+[![Azure DevOps](https://img.shields.io/badge/VC-Azure%20DevOps-blue?logo=azuredevops&logoColor=white)](https://dev.azure.com/Junaid-Arif/InkSync)
 
 **InkSync** is a modular full-stack blogging platform built to simulate the separation of concerns between API services and user-facing interfaces. Designed with scalability, maintainability, and CI/CD automation in mind, the project consists of:
 
@@ -18,9 +18,9 @@
 
 ## 💻 Live Services
 
-- 📰 **[InkSync UI](https://inksync-ui.azurewebsites.net/)**
-- 🖋️ **[InkSync API](https://inksync-api.azurewebsites.net/)**
-- 📖 **[Swagger Docs](https://inksync-api.azurewebsites.net/api-docs)**
+- 📰 **[InkSync UI](https://inksync-ui-fmewgcceaehfbgc9.canadacentral-01.azurewebsites.net/)**
+- 🖋️ **[InkSync API](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/)**
+- 📖 **[Swagger Docs](https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net/api-docs)**
 - 🛠 **[GitHub Repo](https://github.com/junaid-mohammad/InkSync)**
 - 🛠 **[Azure DevOps](https://dev.azure.com/Junaid-Arif/InkSync)**
 
@@ -199,6 +199,7 @@ InkSync is deployed as **two independent Node.js applications** using **Azure Ap
      3. Re-run the GitHub workflow job from the Actions tab.
 
    - **In-Memory Persistence**: Posts remain live until App Service is manually restarted or redeployed (cold start or crash will also reset them).
+   - **Note**: A detailed document DepoloymentChallenges.md is added to the repository documenting all the Challenges and Learnings in trying to deploy this app.
 
 ---
 
