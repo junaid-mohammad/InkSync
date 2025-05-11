@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: "18.x"
           cache: "npm" # Cache npm dependencies for faster builds
+          cache-dependency-path: "api/package-lock.json"
 
       - name: Install dependencies
         run: npm ci # Install using package-lock (or use npm install if no lockfile)
