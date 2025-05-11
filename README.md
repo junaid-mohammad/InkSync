@@ -206,3 +206,5 @@ This project is open-source and free to use for personal or educational purposes
 ## ✨ Credits
 
 Built by Junaid Arif. Inspired by real-world web application architecture and designed as a scalable full-stack showcase.
+
+## Problems with Azure Workflows, so GitHub Workflows Chosen Instead
