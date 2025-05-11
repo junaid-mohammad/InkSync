@@ -1,0 +1,44 @@
+name: Deploy API Service
+
+# Trigger on pushes to main branch affecting files in the "api" folder
+on:
+  push:
+    branches: [main]
+    paths:
+      - "api/**" # Only run if files under api/ changed:contentReference[oaicite:1]{index=1}
+  workflow_dispatch: # Allow manual trigger of this workflow if needed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: api # Default directory for run steps is the api folder
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18.x"
+          cache: "npm" # Cache npm dependencies for faster builds
+
+      - name: Install dependencies
+        run: npm ci # Install using package-lock (or use npm install if no lockfile)
+
+      - name: Build project (if needed)
+        run: npm run build --if-present
+
+      # (Optional) - name: Run tests
+      # (Optional)   run: npm test
+
+      - name: Deploy to Azure Web App (InkSync-API)
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: "InkSync-API" # Azure App Service name for the API
+          publish-profile: ${{ secrets.INKSYNC_API_PUBLISH_PROFILE }}
+          package: "." # Deploy the contents of the current directory (api folder):contentReference[oaicite:2]{index=2}
+
