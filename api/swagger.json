@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "https://inksync-api.azurewebsites.net",
+        "url": "https://inksync-api-fka2anc8fsdubqa4.canadacentral-01.azurewebsites.net",
         "description": "Production server"
       },
       {

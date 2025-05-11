@@ -1,42 +1,52 @@
-name: Deploy API Service
+# ===============================
+# api.yml — GitHub Actions Workflow for InkSync API Deployment
+# ===============================
 
-# Trigger on pushes to main branch affecting files in the "api" folder
+# Trigger the workflow on pushes to the main branch that affect any files under /api
 on:
   push:
     branches: [main]
     paths:
-      - "api/**" # Only run if files under api/ changed:contentReference[oaicite:1]{index=1}
-  workflow_dispatch: # Allow manual trigger of this workflow if needed
+      - "api/**" # Only run if changes are made in the API directory
+  workflow_dispatch: # Allow manual triggering from GitHub Actions UI
 
+# Define the job
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner provided by GitHub
 
     defaults:
       run:
-        working-directory: api # Default directory for run steps is the api folder
+        working-directory: api # All commands run inside the /api subfolder
 
     steps:
+      # Step 1: Checkout code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js version 18 and enable dependency caching
       - name: Setup Node.js 18.x
         uses: actions/setup-node@v4
         with:
           node-version: "18.x"
-          cache: "npm" # Cache npm dependencies for faster builds
+          cache: "npm"
           cache-dependency-path: "api/package-lock.json"
 
+      # Step 3: Install dependencies using npm ci (clean install based on lock file)
       - name: Install dependencies
-        run: npm ci # Install using package-lock (or use npm install if no lockfile)
+        run: npm ci
 
-      # (Optional) - name: Run tests
-      # (Optional)   run: npm test
+      # Step 4: (Optional) Run tests if any exist
+      # - name: Run tests
+      #   run: npm test
 
+      # Step 5: Deploy to Azure App Service using publish profile
       - name: Deploy to Azure Web App (InkSync-API)
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "InkSync-API" # Azure App Service name for the API
-          publish-profile: ${{ secrets.INKSYNC_API_PUBLISH_PROFILE }}
-          package: "." # Deploy the contents of the current directory (api folder):contentReference[oaicite:2]{index=2}
-
+          app-name: "InkSync-API" # Name of the Azure App Service
+          publish-profile: ${{ secrets.INKSYNC_API_PUBLISH_PROFILE }} # Secret from GitHub repo
+          package: "." # Deploy contents of the api folder
+          # Note: The publish profile should be stored as a secret in the GitHub repository settings
+          # and should be named INKSYNC_API_PUBLISH_PROFILE.
+          # You can generate the publish profile from the Azure portal for your App Service.

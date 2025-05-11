@@ -1,24 +1,30 @@
-name: Deploy UI Service
+# ===============================
+# ui.yml — GitHub Actions Workflow for InkSync UI Deployment
+# ===============================
 
+# Trigger the workflow on pushes to the main branch that affect any files under /ui
 on:
   push:
     branches: [main]
     paths:
-      - "ui/**" # Only run if files under ui/ changed
-  workflow_dispatch: # Allow manual trigger
+      - "ui/**" # Only run if changes are made in the UI directory
+  workflow_dispatch: # Allow manual triggering from GitHub Actions UI
 
+# Define the job
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner provided by GitHub
 
     defaults:
       run:
-        working-directory: ui # Run steps in the ui/ subfolder
+        working-directory: ui # All commands run inside the /ui subfolder
 
     steps:
+      # Step 1: Checkout code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js version 18 and enable dependency caching
       - name: Setup Node.js 18.x
         uses: actions/setup-node@v4
         with:
@@ -26,15 +32,21 @@ jobs:
           cache: "npm"
           cache-dependency-path: "ui/package-lock.json"
 
+      # Step 3: Install dependencies using npm ci (clean install based on lock file)
       - name: Install dependencies
         run: npm ci
 
-      # - name: Run tests (optional)
+      # Step 4: (Optional) Run tests if any exist
+      # - name: Run tests
       #   run: npm test
 
+      # Step 5: Deploy to Azure App Service using publish profile
       - name: Deploy to Azure Web App (InkSync-UI)
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "InkSync-UI" # Azure App Service name for the UI
-          publish-profile: ${{ secrets.INKSYNC_UI_PUBLISH_PROFILE }}
-          package: "."
+          app-name: "InkSync-UI" # Name of the Azure App Service
+          publish-profile: ${{ secrets.INKSYNC_UI_PUBLISH_PROFILE }} # Secret from GitHub repo
+          package: "." # Deploy contents of the ui folder
+          # Note: The publish profile should be stored as a secret in GitHub for security
+          # and should be named INKSYNC_UI_PUBLISH_PROFILE.
+          # You can generate the publish profile from the Azure portal for your App Service.
